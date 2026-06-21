@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Suppléments AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4e2e00, #8d6e2b, #d4a843);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .header {
+            background: linear-gradient(135deg, #8d6e2b, #d4a843);
+            padding: 30px;
+            text-align: center;
+        }
+        .badge {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: white;
+            font-size: 12px;
+        }
+        h1 { color: white; margin: 15px 0 5px; font-size: 1.8rem; }
+        .subtitle { color: rgba(255,255,255,0.9); font-size: 14px; }
+        .form-body { padding: 30px; }
+        .info-box {
+            background: #fef8e7;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; }
+        select, input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #d4a843;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+        }
+        .success {
+            display: block;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            display: block;
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .ai-response {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid #d4a843;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+        .footer {
+            background: #f9fafb;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer a {
+            color: #8d6e2b;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .language-selector {
+            text-align: right;
+            padding: 10px 20px;
+            background: #fef8e7;
+            border-bottom: 1px solid #ddd;
+        }
+        .language-selector select {
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: auto;
+        }
+        .voile-warning {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+<div class="language-selector">
+<label for="languageSelector" style="font-weight:bold;margin-right:8px;">🌐</label>
+<select id="languageSelector">
+<option value="fr">🇫🇷 Français</option>
+<option value="en">🇬🇧 English</option>
+</select>
+</div>
+<div class="header">
+<div class="badge">🔒 100% ANONYME</div>
+<h1>🧪 Suppléments AI</h1>
+<div class="subtitle">Conseil personnalisé en micronutrition</div>
+</div>
+<div class="form-body">
+<div class="info-box"><div>🔒</div><div><strong>Confidentialité totale</strong><br>Aucune donnée personnelle</div></div>
+<form id="supplementsForm">
+<div class="form-group"><label for="country">🌍 Pays</label>
+<select id="country"><option value="fr">France</option><option value="ca">Canada</option><option value="us">États-Unis</option></select></div>
+<div class="form-group"><label for="goal">🎯 Objectif</label>
+<select id="goal"><option value="energie">Énergie</option><option value="sommeil">Sommeil</option><option value="immunite">Immunité</option></select></div>
+<div class="form-group"><label for="age">📅 Âge</label><input type="number" id="age" placeholder="35" required></div>
+<div class="form-group"><label for="gender">⚧️ Sexe</label>
+<select id="gender"><option value="homme">Homme</option><option value="femme">Femme</option></select></div>
+<div class="form-group"><label for="description">📝 Description</label><textarea id="description" rows="5" placeholder="Décrivez vos besoins..." required></textarea></div>
+<button type="submit" id="submitBtn">Obtenir des recommandations</button>
+</form>
+<div id="result"></div>
+<div class="voile-warning">🤖 L'IA donne des conseils généraux. Elle ne recommande aucun produit ou marque.</div>
+</div>
+<div class="footer">🔒 100% anonyme &nbsp;|&nbsp; <a href="/privacy">Confidentialité</a> &nbsp;|&nbsp; <a href="/terms">Conditions</a></div>
+</div></div>
+<script>
+const translations = {
+    fr: {
+        badge: "🔒 100% ANONYME",
+        title: "🧪 Suppléments AI",
+        subtitle: "Conseil personnalisé en micronutrition",
+        info_title: "Confidentialité totale",
+        info_text: "Aucune donnée personnelle",
+        label_country: "🌍 Pays",
+        label_goal: "🎯 Objectif",
+        label_age: "📅 Âge",
+        label_gender: "⚧️ Sexe",
+        label_description: "📝 Description",
+        button: "Obtenir des recommandations",
+        footer: "🔒 100% anonyme",
+        placeholder: "Décrivez vos besoins...",
+        success: "✅ Votre demande a été reçue",
+        error: "❌ Erreur: ",
+        conseil: "Vos recommandations",
+        voile: "🤖 L'IA donne des conseils généraux. Elle ne recommande aucun produit ou marque."
+    },
+    en: {
+        badge: "🔒 100% ANONYMOUS",
+        title: "🧪 Suppléments AI",
+        subtitle: "Personalized micronutrition advice",
+        info_title: "Total confidentiality",
+        info_text: "No personal data",
+        label_country: "🌍 Country",
+        label_goal: "🎯 Goal",
+        label_age: "📅 Age",
+        label_gender: "⚧️ Gender",
+        label_description: "📝 Description",
+        button: "Get recommendations",
+        footer: "🔒 100% anonymous",
+        placeholder: "Describe your needs...",
+        success: "✅ Your request has been received",
+        error: "❌ Error: ",
+        conseil: "Your recommendations",
+        voile: "🤖 The AI gives general advice. It does not recommend any product or brand."
+    }
+};
+
+function changeLanguage(lang) {
+    const t = translations[lang] || translations.fr;
+    const badge = document.querySelector('.badge');
+    const title = document.querySelector('h1');
+    const subtitle = document.querySelector('.subtitle');
+    const infoTitle = document.querySelector('.info-box strong');
+    const infoText = document.querySelector('.info-box p');
+    const countryLabel = document.querySelector('label[for="country"]');
+    const goalLabel = document.querySelector('label[for="goal"]');
+    const ageLabel = document.querySelector('label[for="age"]');
+    const genderLabel = document.querySelector('label[for="gender"]');
+    const descLabel = document.querySelector('label[for="description"]');
+    const submitBtn = document.getElementById('submitBtn');
+    const footer = document.querySelector('.footer');
+    const placeholder = document.getElementById('description');
+    const voileWarning = document.querySelector('.voile-warning');
+
+    if (badge) badge.textContent = t.badge;
+    if (title) title.textContent = t.title;
+    if (subtitle) subtitle.textContent = t.subtitle;
+    if (infoTitle) infoTitle.textContent = t.info_title;
+    if (infoText) infoText.textContent = t.info_text;
+    if (countryLabel) countryLabel.textContent = t.label_country;
+    if (goalLabel) goalLabel.textContent = t.label_goal;
+    if (ageLabel) ageLabel.textContent = t.label_age;
+    if (genderLabel) genderLabel.textContent = t.label_gender;
+    if (descLabel) descLabel.textContent = t.label_description;
+    if (submitBtn) submitBtn.textContent = t.button;
+    if (footer) footer.textContent = t.footer;
+    if (placeholder) placeholder.placeholder = t.placeholder;
+    if (voileWarning) voileWarning.innerHTML = t.voile;
+}
+
+document.getElementById('languageSelector').addEventListener('change', function() {
+    changeLanguage(this.value);
+});
+changeLanguage('fr');
+
+const form = document.getElementById('supplementsForm');
+const resultDiv = document.getElementById('result');
+const submitBtn = document.getElementById('submitBtn');
+
+form.onsubmit = async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi...';
+    resultDiv.style.display = 'block';
+    resultDiv.className = 'success';
+    resultDiv.innerHTML = '⏳ Génération...';
+    const data = {
+        country: document.getElementById('country').value,
+        goal: document.getElementById('goal').value,
+        age: document.getElementById('age').value,
+        gender: document.getElementById('gender').value,
+        description: document.getElementById('description').value,
+        language: document.getElementById('languageSelector').value
+    };
+    try {
+        const res = await fetch('/api/submit-anonymous-case', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        const currentLang = document.getElementById('languageSelector').value;
+        const t = translations[currentLang] || translations.fr;
+        let aiHtml = '';
+        if (result.aiResponse) {
+            aiHtml = '<div class="ai-response"><strong>🤖 ' + t.conseil + ' :</strong><br><br>' + result.aiResponse.replace(/\n/g, '<br>') + '</div>';
+        }
+        resultDiv.innerHTML = '<strong>' + t.success + '</strong><br>Référence: ' + result.reference + '<br>Date: ' + new Date(result.date).toLocaleString() + aiHtml;
+        form.reset();
+    } catch(err) {
+        const currentLang = document.getElementById('languageSelector').value;
+        const t = translations[currentLang] || translations.fr;
+        resultDiv.className = 'error';
+        resultDiv.innerHTML = (t.error || '❌ Erreur: ') + err.message;
+    } finally {
+        submitBtn.disabled = false;
+        const currentLang = document.getElementById('languageSelector').value;
+        const t = translations[currentLang] || translations.fr;
+        submitBtn.textContent = t.button || 'Obtenir des recommandations';
+    }
+};
+</script>
+</body>
+</html>
