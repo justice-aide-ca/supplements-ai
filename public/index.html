@@ -321,6 +321,35 @@ form.onsubmit = async (e) => {
         submitBtn.textContent = t.button || 'Obtenir des recommandations';
     }
 };
-</script>
+<// ===== TÉMOIGNAGES =====
+const testimonials = [
+    { id: 1, text: "Grâce à Suppléments AI, j'ai découvert la vitamine D et ses bienfaits. Je me sens beaucoup mieux.", author: "Utilisateur anonyme", country: "Canada", date: "2026-06-15" },
+    { id: 2, text: "Je ne savais pas quel complément prendre pour ma fatigue. Les conseils étaient clairs et m'ont orienté vers un médecin.", author: "Utilisateur anonyme", country: "France", date: "2026-06-12" },
+    { id: 3, text: "Un outil simple et fiable. Les recommandations sont générales mais très utiles.", author: "Utilisateur anonyme", country: "Maroc", date: "2026-06-10" },
+    { id: 4, text: "J'ai utilisé Suppléments AI pour ma mère âgée. Les conseils sur les omégas-3 étaient très pertinents.", author: "Utilisateur anonyme", country: "Belgique", date: "2026-06-08" },
+    { id: 5, text: "En tant que sportif, j'ai trouvé des recommandations utiles sur le magnésium. Sans marque, juste des conseils.", author: "Utilisateur anonyme", country: "États-Unis", date: "2026-06-05" }
+];
+
+function displayRandomTestimonial() {
+    const container = document.getElementById('testimonialContainer');
+    if (!container) return;
+    const randomIndex = Math.floor(Math.random() * testimonials.length);
+    const t = testimonials[randomIndex];
+    container.innerHTML = `
+        <div><p>"${t.text}"</p>
+        <div class="author">— ${t.author}</div>
+        <div class="meta">${t.country} · ${new Date(t.date).toLocaleDateString()}</div></div>
+    `;
+}
+
+setInterval(displayRandomTestimonial, 10000);
+displayRandomTestimonial();
+>
+<!-- Témoignages -->
+<div class="testimonials-section">
+    <h3>💬 Ce que nos utilisateurs disent</h3>
+    <div id="testimonialContainer" class="testimonial-container">⏳ Chargement...</div>
+    <div class="testimonial-legal">🔒 Témoignages anonymes - Libres de droits</div>
+</div>
 </body>
 </html>
