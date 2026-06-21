@@ -129,6 +129,19 @@
 <div class="language-selector">
 <label for="languageSelector" style="font-weight:bold;margin-right:8px;">🌐</label>
 <select id="languageSelector">
+    <option value="fr">🇫🇷 Français</option>
+    <option value="en">🇬🇧 English</option>
+    <option value="es">🇪🇸 Español</option>
+    <option value="de">🇩🇪 Deutsch</option>
+    <option value="ar">🇸🇦 العربية</option>
+    <option value="pt">🇵🇹 Português</option>
+    <option value="it">🇮🇹 Italiano</option>
+    <option value="ru">🇷🇺 Русский</option>
+    <option value="zh">🇨🇳 中文</option>
+    <option value="ja">🇯🇵 日本語</option>
+    <option value="ko">🇰🇷 한국어</option>
+    <option value="hi">🇮🇳 हिन्दी</option>
+</select>
 <option value="fr">🇫🇷 Français</option>
 <option value="en">🇬🇧 English</option>
 </select>
@@ -196,46 +209,117 @@
 <div class="footer">🔒 100% anonyme &nbsp;|&nbsp; <a href="/privacy">Confidentialité</a> &nbsp;|&nbsp; <a href="/terms">Conditions</a></div>
 </div></div>
 <script>
-const translations = {
+const const translations = {
     fr: {
-        badge: "🔒 100% ANONYME",
-        title: "🧪 Suppléments AI",
-        subtitle: "Conseil personnalisé en micronutrition",
-        info_title: "Confidentialité totale",
-        info_text: "Aucune donnée personnelle",
-        label_country: "🌍 Pays",
-        label_goal: "🎯 Objectif",
-        label_age: "📅 Âge",
-        label_gender: "⚧️ Sexe",
-        label_description: "📝 Description",
-        button: "Obtenir des recommandations",
-        footer: "🔒 100% anonyme",
-        placeholder: "Décrivez vos besoins...",
-        success: "✅ Votre demande a été reçue",
-        error: "❌ Erreur: ",
-        conseil: "Vos recommandations",
-        voile: "🤖 L'IA donne des conseils généraux. Elle ne recommande aucun produit ou marque."
+        badge: "🔒 100% ANONYME", title: "🧪 Suppléments AI", subtitle: "Conseil personnalisé en micronutrition",
+        info_title: "Confidentialité totale", info_text: "Aucune donnée personnelle",
+        label_country: "🌍 Pays", label_goal: "🎯 Objectif", label_age: "📅 Âge", label_gender: "⚧️ Sexe",
+        label_description: "📝 Description", button: "Obtenir des recommandations", footer: "🔒 100% anonyme",
+        placeholder: "Décrivez vos besoins...", success: "✅ Votre demande a été reçue", error: "❌ Erreur: ",
+        conseil: "Vos recommandations", voile: "🤖 L'IA donne des conseils généraux. Elle ne recommande aucun produit ou marque.",
+        gender_male: "Homme", gender_female: "Femme", gender_other: "Autre"
     },
     en: {
-        badge: "🔒 100% ANONYMOUS",
-        title: "🧪 Suppléments AI",
-        subtitle: "Personalized micronutrition advice",
-        info_title: "Total confidentiality",
-        info_text: "No personal data",
-        label_country: "🌍 Country",
-        label_goal: "🎯 Goal",
-        label_age: "📅 Age",
-        label_gender: "⚧️ Gender",
-        label_description: "📝 Description",
-        button: "Get recommendations",
-        footer: "🔒 100% anonymous",
-        placeholder: "Describe your needs...",
-        success: "✅ Your request has been received",
-        error: "❌ Error: ",
-        conseil: "Your recommendations",
-        voile: "🤖 The AI gives general advice. It does not recommend any product or brand."
+        badge: "🔒 100% ANONYMOUS", title: "🧪 Suppléments AI", subtitle: "Personalized micronutrition advice",
+        info_title: "Total confidentiality", info_text: "No personal data",
+        label_country: "🌍 Country", label_goal: "🎯 Goal", label_age: "📅 Age", label_gender: "⚧️ Gender",
+        label_description: "📝 Description", button: "Get recommendations", footer: "🔒 100% anonymous",
+        placeholder: "Describe your needs...", success: "✅ Your request has been received", error: "❌ Error: ",
+        conseil: "Your recommendations", voile: "🤖 The AI gives general advice. It does not recommend any product or brand.",
+        gender_male: "Male", gender_female: "Female", gender_other: "Other"
+    },
+    es: {
+        badge: "🔒 100% ANÓNIMO", title: "🧪 Suplementos AI", subtitle: "Consejo personalizado en micronutrición",
+        info_title: "Confidencialidad total", info_text: "Sin datos personales",
+        label_country: "🌍 País", label_goal: "🎯 Objetivo", label_age: "📅 Edad", label_gender: "⚧️ Sexo",
+        label_description: "📝 Descripción", button: "Obtener recomendaciones", footer: "🔒 100% anónimo",
+        placeholder: "Describe tus necesidades...", success: "✅ Tu solicitud ha sido recibida", error: "❌ Error: ",
+        conseil: "Tus recomendaciones", voile: "🤖 La IA da consejos generales. No recomienda ningún producto o marca.",
+        gender_male: "Hombre", gender_female: "Mujer", gender_other: "Otro"
+    },
+    de: {
+        badge: "🔒 100% ANONYM", title: "🧪 Nahrungsergänzungsmittel AI", subtitle: "Personalisierte Mikronährstoffberatung",
+        info_title: "Absolute Vertraulichkeit", info_text: "Keine persönlichen Daten",
+        label_country: "🌍 Land", label_goal: "🎯 Ziel", label_age: "📅 Alter", label_gender: "⚧️ Geschlecht",
+        label_description: "📝 Beschreibung", button: "Empfehlungen erhalten", footer: "🔒 100% anonym",
+        placeholder: "Beschreiben Sie Ihre Bedürfnisse...", success: "✅ Ihre Anfrage wurde empfangen", error: "❌ Fehler: ",
+        conseil: "Ihre Empfehlungen", voile: "🤖 Die KI gibt allgemeine Ratschläge. Sie empfiehlt keine bestimmten Produkte oder Marken.",
+        gender_male: "Mann", gender_female: "Frau", gender_other: "Andere"
+    },
+    ar: {
+        badge: "🔒 مجهول 100%", title: "🧪 مكملات الذكاء الاصطناعي", subtitle: "استشارة شخصية في التغذية الدقيقة",
+        info_title: "سرية تامة", info_text: "لا يتم جمع أي بيانات شخصية",
+        label_country: "🌍 البلد", label_goal: "🎯 الهدف", label_age: "📅 العمر", label_gender: "⚧️ الجنس",
+        label_description: "📝 الوصف", button: "الحصول على توصيات", footer: "🔒 مجهول 100%",
+        placeholder: "صف احتياجاتك...", success: "✅ تم استلام طلبك", error: "❌ خطأ: ",
+        conseil: "توصياتك", voile: "🤖 يقدم الذكاء الاصطناعي نصائح عامة. لا يوصي بأي منتج أو علامة تجارية.",
+        gender_male: "ذكر", gender_female: "أنثى", gender_other: "أخرى"
+    },
+    pt: {
+        badge: "🔒 100% ANÔNIMO", title: "🧪 Suplementos AI", subtitle: "Conselho personalizado em micronutrição",
+        info_title: "Confidencialidade total", info_text: "Sem dados pessoais",
+        label_country: "🌍 País", label_goal: "🎯 Objetivo", label_age: "📅 Idade", label_gender: "⚧️ Sexo",
+        label_description: "📝 Descrição", button: "Obter recomendações", footer: "🔒 100% anônimo",
+        placeholder: "Descreva suas necessidades...", success: "✅ Sua solicitação foi recebida", error: "❌ Erro: ",
+        conseil: "Suas recomendações", voile: "🤖 A IA dá conselhos gerais. Ela não recomenda nenhum produto ou marca.",
+        gender_male: "Homem", gender_female: "Mulher", gender_other: "Outro"
+    },
+    it: {
+        badge: "🔒 100% ANONIMO", title: "🧪 Integratori AI", subtitle: "Consulenza personalizzata in micronutrizione",
+        info_title: "Riservatezza totale", info_text: "Nessun dato personale",
+        label_country: "🌍 Paese", label_goal: "🎯 Obiettivo", label_age: "📅 Età", label_gender: "⚧️ Sesso",
+        label_description: "📝 Descrizione", button: "Ottieni raccomandazioni", footer: "🔒 100% anonimo",
+        placeholder: "Descrivi le tue esigenze...", success: "✅ La tua richiesta è stata ricevuta", error: "❌ Errore: ",
+        conseil: "Le tue raccomandazioni", voile: "🤖 L'IA fornisce consigli generali. Non raccomanda alcun prodotto o marchio.",
+        gender_male: "Uomo", gender_female: "Donna", gender_other: "Altro"
+    },
+    ru: {
+        badge: "🔒 100% АНОНИМНО", title: "🧪 Добавки AI", subtitle: "Персонализированная консультация по микронутриентам",
+        info_title: "Полная конфиденциальность", info_text: "Без личных данных",
+        label_country: "🌍 Страна", label_goal: "🎯 Цель", label_age: "📅 Возраст", label_gender: "⚧️ Пол",
+        label_description: "📝 Описание", button: "Получить рекомендации", footer: "🔒 100% анонимно",
+        placeholder: "Опишите ваши потребности...", success: "✅ Ваш запрос получен", error: "❌ Ошибка: ",
+        conseil: "Ваши рекомендации", voile: "🤖 ИИ дает общие советы. Он не рекомендует конкретные продукты или бренды.",
+        gender_male: "Мужчина", gender_female: "Женщина", gender_other: "Другое"
+    },
+    zh: {
+        badge: "🔒 100% 匿名", title: "🧪 补充剂AI", subtitle: "个性化微量营养素咨询",
+        info_title: "完全保密", info_text: "不收集个人数据",
+        label_country: "🌍 国家", label_goal: "🎯 目标", label_age: "📅 年龄", label_gender: "⚧️ 性别",
+        label_description: "📝 描述", button: "获取建议", footer: "🔒 100% 匿名",
+        placeholder: "描述您的需求...", success: "✅ 您的请求已收到", error: "❌ 错误: ",
+        conseil: "您的建议", voile: "🤖 AI提供一般建议，不推荐任何特定产品或品牌。",
+        gender_male: "男性", gender_female: "女性", gender_other: "其他"
+    },
+    ja: {
+        badge: "🔒 100% 匿名", title: "🧪 サプリメントAI", subtitle: "パーソナライズされた微量栄養素アドバイス",
+        info_title: "完全な機密性", info_text: "個人データは収集されません",
+        label_country: "🌍 国", label_goal: "🎯 目標", label_age: "📅 年齢", label_gender: "⚧️ 性別",
+        label_description: "📝 説明", button: "推奨事項を取得", footer: "🔒 100% 匿名",
+        placeholder: "あなたのニーズを説明してください...", success: "✅ リクエストを受信しました", error: "❌ エラー: ",
+        conseil: "あなたの推奨事項", voile: "🤖 AIは一般的なアドバイスを提供します。特定の製品やブランドを推奨しません。",
+        gender_male: "男性", gender_female: "女性", gender_other: "その他"
+    },
+    ko: {
+        badge: "🔒 100% 익명", title: "🧪 보충제AI", subtitle: "맞춤형 미량영양소 상담",
+        info_title: "완전한 기밀성", info_text: "개인 데이터 수집 없음",
+        label_country: "🌍 국가", label_goal: "🎯 목표", label_age: "📅 나이", label_gender: "⚧️ 성별",
+        label_description: "📝 설명", button: "추천 받기", footer: "🔒 100% 익명",
+        placeholder: "당신의 필요를 설명하세요...", success: "✅ 요청이 접수되었습니다", error: "❌ 오류: ",
+        conseil: "당신의 추천", voile: "🤖 AI는 일반적인 조언을 제공합니다. 특정 제품이나 브랜드를 추천하지 않습니다.",
+        gender_male: "남성", gender_female: "여성", gender_other: "기타"
+    },
+    hi: {
+        badge: "🔒 100% गुमनाम", title: "🧪 पूरक AI", subtitle: "व्यक्तिगत सूक्ष्म पोषण परामर्श",
+        info_title: "पूर्ण गोपनीयता", info_text: "कोई व्यक्तिगत डेटा एकत्र नहीं किया जाता",
+        label_country: "🌍 देश", label_goal: "🎯 लक्ष्य", label_age: "📅 आयु", label_gender: "⚧️ लिंग",
+        label_description: "📝 विवरण", button: "सिफारिशें प्राप्त करें", footer: "🔒 100% गुमनाम",
+        placeholder: "अपनी आवश्यकताओं का वर्णन करें...", success: "✅ आपका अनुरोध प्राप्त हो गया है", error: "❌ त्रुटि: ",
+        conseil: "आपकी सिफारिशें", voile: "🤖 AI सामान्य सलाह देता है। यह किसी विशिष्ट उत्पाद या ब्रांड की अनुशंसा नहीं करता है।",
+        gender_male: "पुरुष", gender_female: "महिला", gender_other: "अन्य"
     }
 };
+ 
 
 function changeLanguage(lang) {
     const t = translations[lang] || translations.fr;
