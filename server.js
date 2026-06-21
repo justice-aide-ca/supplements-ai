@@ -70,7 +70,7 @@ app.post('/api/submit-anonymous-case', async (req, res) => {
 
     let aiResponse = "Service IA en cours d'activation...";
 
-    const languageNames = const languageNames = {
+    const languageNames = {
     fr: 'français',
     en: 'anglais',
     es: 'espagnol',
@@ -84,7 +84,6 @@ app.post('/api/submit-anonymous-case', async (req, res) => {
     ko: 'coréen',
     hi: 'hindi'
 };
-    const promptLang = languageNames[language] || 'français';
 
     const restrictions = legalRestrictions[country] || {
         interdits: [],
