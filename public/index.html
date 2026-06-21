@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -100,6 +101,7 @@
             text-decoration: none;
             margin: 0 5px;
         }
+        .footer a:hover { text-decoration: underline; }
         .language-selector {
             text-align: right;
             padding: 10px 20px;
@@ -121,95 +123,247 @@
             background: #f9fafb;
             border-radius: 8px;
         }
+        .testimonials-section {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .testimonials-section h3 {
+            text-align: center;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .testimonial-container {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            min-height: 80px;
+            padding: 10px;
+        }
+        .testimonial-container .author {
+            margin-top: 10px;
+            font-weight: bold;
+            font-style: normal;
+            color: #8d6e2b;
+        }
+        .testimonial-container .meta {
+            font-size: 12px;
+            color: #999;
+            font-style: normal;
+            margin-top: 5px;
+        }
+        .testimonial-legal {
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            margin-top: 10px;
+        }
+        .ecosystem {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .ecosystem a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+        .ecosystem a:hover {
+            text-decoration: underline;
+        }
+        .ecosystem .separator {
+            color: #ccc;
+        }
+        .ecosystem-tag {
+            font-size: 12px;
+            color: #888;
+            margin-top: 6px;
+        }
     </style>
 </head>
 <body>
 <div class="container">
 <div class="card">
+
+<!-- Sélecteur de langues -->
 <div class="language-selector">
-<label for="languageSelector" style="font-weight:bold;margin-right:8px;">🌐</label>
-<select id="languageSelector">
-    <option value="fr">🇫🇷 Français</option>
-    <option value="en">🇬🇧 English</option>
-    <option value="es">🇪🇸 Español</option>
-    <option value="de">🇩🇪 Deutsch</option>
-    <option value="ar">🇸🇦 العربية</option>
-    <option value="pt">🇵🇹 Português</option>
-    <option value="it">🇮🇹 Italiano</option>
-    <option value="ru">🇷🇺 Русский</option>
-    <option value="zh">🇨🇳 中文</option>
-    <option value="ja">🇯🇵 日本語</option>
-    <option value="ko">🇰🇷 한국어</option>
-    <option value="hi">🇮🇳 हिन्दी</option>
-</select>
-<option value="fr">🇫🇷 Français</option>
-<option value="en">🇬🇧 English</option>
-</select>
+    <label for="languageSelector" style="font-weight:bold;margin-right:8px;">🌐</label>
+    <select id="languageSelector">
+        <option value="fr">🇫🇷 Français</option>
+        <option value="en">🇬🇧 English</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="pt">🇵🇹 Português</option>
+        <option value="it">🇮🇹 Italiano</option>
+        <option value="ru">🇷🇺 Русский</option>
+        <option value="zh">🇨🇳 中文</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="hi">🇮🇳 हिन्दी</option>
+    </select>
 </div>
+
+<!-- En-tête -->
 <div class="header">
-<div class="badge">🔒 100% ANONYME</div>
-<h1>🧪 Suppléments AI</h1>
-<div class="subtitle">Conseil personnalisé en micronutrition</div>
+    <div class="badge">🔒 100% ANONYME</div>
+    <h1>🧪 Suppléments AI</h1>
+    <div class="subtitle">Conseil personnalisé en micronutrition</div>
 </div>
+
+<!-- Corps du formulaire -->
 <div class="form-body">
-<div class="info-box"><div>🔒</div><div><strong>Confidentialité totale</strong><br>Aucune donnée personnelle</div></div>
-<form id="supplementsForm">
-<div class="form-group"><label for="country">🌍 Pays</label>
-<<select id="country">
-    <option value="fr">France</option>
-    <option value="ca">Canada</option>
-    <option value="us">États-Unis</option>
-    <option value="ma">Maroc</option>
-    <option value="dz">Algérie</option>
-    <option value="tn">Tunisie</option>
-    <option value="sn">Sénégal</option>
-    <option value="ci">Côte d'Ivoire</option>
-    <option value="cm">Cameroun</option>
-    <option value="be">Belgique</option>
-    <option value="ch">Suisse</option>
-    <option value="de">Allemagne</option>
-    <option value="es">Espagne</option>
-    <option value="it">Italie</option>
-    <option value="pt">Portugal</option>
-    <option value="gb">Royaume-Uni</option>
-    <option value="br">Brésil</option>
-    <option value="mx">Mexique</option>
-    <option value="in">Inde</option>
-    <option value="cn">Chine</option>
-    <option value="jp">Japon</option>
-    <option value="kr">Corée du Sud</option>
-    <option value="ru">Russie</option>
-</select>
-<div class="form-group"><label for="goal">🎯 Objectif</label>
-<select id="goal">
-    <option value="energie">Énergie</option>
-    <option value="sommeil">Sommeil</option>
-    <option value="immunite">Immunité</option>
-    <option value="poids">Perte de poids</option>
-    <option value="stress">Gestion du stress</option>
-    <option value="digestion">Digestion</option>
-    <option value="peau">Peau / cheveux / ongles</option>
-    <option value="sport">Performance sportive</option>
-    <option value="memoire">Mémoire / concentration</option>
-    <option value="articulations">Articulations / os</option>
-    <option value="detox">Détoxification</option>
-    <option value="grossesse">Grossesse / allaitement</option>
-    <option value="senior">Bien-être senior</option>
-    <option value="enfant">Croissance enfant</option>
-</select>
-<div class="form-group"><label for="age">📅 Âge</label><input type="number" id="age" placeholder="35" required></div>
-<div class="form-group"><label for="gender">⚧️ Sexe</label>
-<select id="gender"><option value="homme">Homme</option><option value="femme">Femme</option></select></div>
-<div class="form-group"><label for="description">📝 Description</label><textarea id="description" rows="5" placeholder="Décrivez vos besoins..." required></textarea></div>
-<button type="submit" id="submitBtn">Obtenir des recommandations</button>
-</form>
-<div id="result"></div>
-<div class="voile-warning">🤖 L'IA donne des conseils généraux. Elle ne recommande aucun produit ou marque.</div>
+
+    <div class="info-box">
+        <div>🔒</div>
+        <div><strong>Confidentialité totale</strong><br>Aucune donnée personnelle</div>
+    </div>
+
+    <form id="supplementsForm">
+        <div class="form-group">
+            <label for="country">🌍 Pays</label>
+            <select id="country">
+                <option value="fr">France</option>
+                <option value="ca">Canada</option>
+                <option value="us">États-Unis</option>
+                <option value="ma">Maroc</option>
+                <option value="dz">Algérie</option>
+                <option value="tn">Tunisie</option>
+                <option value="sn">Sénégal</option>
+                <option value="ci">Côte d'Ivoire</option>
+                <option value="cm">Cameroun</option>
+                <option value="be">Belgique</option>
+                <option value="ch">Suisse</option>
+                <option value="de">Allemagne</option>
+                <option value="es">Espagne</option>
+                <option value="it">Italie</option>
+                <option value="pt">Portugal</option>
+                <option value="gb">Royaume-Uni</option>
+                <option value="br">Brésil</option>
+                <option value="mx">Mexique</option>
+                <option value="in">Inde</option>
+                <option value="cn">Chine</option>
+                <option value="jp">Japon</option>
+                <option value="kr">Corée du Sud</option>
+                <option value="ru">Russie</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="goal">🎯 Objectif</label>
+            <select id="goal">
+                <option value="energie">Énergie</option>
+                <option value="sommeil">Sommeil</option>
+                <option value="immunite">Immunité</option>
+                <option value="poids">Perte de poids</option>
+                <option value="stress">Gestion du stress</option>
+                <option value="digestion">Digestion</option>
+                <option value="peau">Peau / cheveux / ongles</option>
+                <option value="sport">Performance sportive</option>
+                <option value="memoire">Mémoire / concentration</option>
+                <option value="articulations">Articulations / os</option>
+                <option value="detox">Détoxification</option>
+                <option value="grossesse">Grossesse / allaitement</option>
+                <option value="senior">Bien-être senior</option>
+                <option value="enfant">Croissance enfant</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="age">📅 Âge</label>
+            <input type="number" id="age" placeholder="35" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">⚧️ Sexe</label>
+            <select id="gender">
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+                <option value="autre">Autre</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description">📝 Description</label>
+            <textarea id="description" rows="5" placeholder="Décrivez vos besoins..." required></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn">Obtenir des recommandations</button>
+    </form>
+
+    <div id="result"></div>
+
+    <div class="voile-warning">
+        🤖 L'IA donne des conseils généraux. Elle ne recommande aucun produit ou marque.
+    </div>
+
+    <!-- Témoignages -->
+    <div class="testimonials-section">
+        <h3>💬 Ce que nos utilisateurs disent</h3>
+        <div id="testimonialContainer" class="testimonial-container">⏳ Chargement...</div>
+        <div class="testimonial-legal">🔒 Témoignages anonymes - Libres de droits</div>
+    </div>
+
+    <!-- Écosystème -->
+    <div class="ecosystem">
+        <p style="font-weight: bold; margin-bottom: 8px;">🌐 Découvrez l'écosystème</p>
+        <div>
+            <a href="https://justice-ai-anonyme-2.onrender.com" target="_blank">⚖️ Justice AI</a>
+            <span class="separator">|</span>
+            <a href="https://bridge-your-project.lovable.app" target="_blank">🌍 ONBRIDGE AI</a>
+            <span class="separator">|</span>
+            <a href="https://amour-et-verite-app.netlify.app" target="_blank">⛪ Amour & Vérité</a>
+            <span class="separator">|</span>
+            <a href="https://supplements-ai.onrender.com" target="_blank">🧪 Suppléments AI</a>
+        </div>
+        <div class="ecosystem-tag">🔗 Confidentiel · Gratuit · Accessible à tous</div>
+    </div>
+
 </div>
-<div class="footer">🔒 100% anonyme &nbsp;|&nbsp; <a href="/privacy">Confidentialité</a> &nbsp;|&nbsp; <a href="/terms">Conditions</a></div>
+
+<!-- Footer -->
+<div class="footer">
+    🔒 100% anonyme &nbsp;|&nbsp;
+    <a href="/about">À propos</a> &nbsp;|&nbsp;
+    <a href="/privacy">Confidentialité</a> &nbsp;|&nbsp;
+    <a href="/terms">Conditions</a> &nbsp;|&nbsp;
+    <a href="/contact">Contact</a>
+</div>
+
 </div></div>
+
 <script>
-const const translations = {
+// ===== TÉMOIGNAGES =====
+const testimonials = [
+    { id: 1, text: "Grâce à Suppléments AI, j'ai découvert la vitamine D et ses bienfaits. Je me sens beaucoup mieux.", author: "Utilisateur anonyme", country: "Canada", date: "2026-06-15" },
+    { id: 2, text: "Je ne savais pas quel complément prendre pour ma fatigue. Les conseils étaient clairs et m'ont orienté vers un médecin.", author: "Utilisateur anonyme", country: "France", date: "2026-06-12" },
+    { id: 3, text: "Un outil simple et fiable. Les recommandations sont générales mais très utiles.", author: "Utilisateur anonyme", country: "Maroc", date: "2026-06-10" },
+    { id: 4, text: "J'ai utilisé Suppléments AI pour ma mère âgée. Les conseils sur les omégas-3 étaient très pertinents.", author: "Utilisateur anonyme", country: "Belgique", date: "2026-06-08" },
+    { id: 5, text: "En tant que sportif, j'ai trouvé des recommandations utiles sur le magnésium. Sans marque, juste des conseils.", author: "Utilisateur anonyme", country: "États-Unis", date: "2026-06-05" }
+];
+
+function displayRandomTestimonial() {
+    const container = document.getElementById('testimonialContainer');
+    if (!container) return;
+    const randomIndex = Math.floor(Math.random() * testimonials.length);
+    const t = testimonials[randomIndex];
+    container.innerHTML = `
+        <div><p>"${t.text}"</p>
+        <div class="author">— ${t.author}</div>
+        <div class="meta">${t.country} · ${new Date(t.date).toLocaleDateString()}</div></div>
+    `;
+}
+
+setInterval(displayRandomTestimonial, 10000);
+displayRandomTestimonial();
+
+// ===== TRADUCTIONS =====
+const translations = {
     fr: {
         badge: "🔒 100% ANONYME", title: "🧪 Suppléments AI", subtitle: "Conseil personnalisé en micronutrition",
         info_title: "Confidentialité totale", info_text: "Aucune donnée personnelle",
@@ -217,7 +371,7 @@ const const translations = {
         label_description: "📝 Description", button: "Obtenir des recommandations", footer: "🔒 100% anonyme",
         placeholder: "Décrivez vos besoins...", success: "✅ Votre demande a été reçue", error: "❌ Erreur: ",
         conseil: "Vos recommandations", voile: "🤖 L'IA donne des conseils généraux. Elle ne recommande aucun produit ou marque.",
-        gender_male: "Homme", gender_female: "Femme", gender_other: "Autre"
+        ecosystem: "🌐 Découvrez l'écosystème", ecosystem_tag: "🔗 Confidentiel · Gratuit · Accessible à tous"
     },
     en: {
         badge: "🔒 100% ANONYMOUS", title: "🧪 Suppléments AI", subtitle: "Personalized micronutrition advice",
@@ -226,7 +380,7 @@ const const translations = {
         label_description: "📝 Description", button: "Get recommendations", footer: "🔒 100% anonymous",
         placeholder: "Describe your needs...", success: "✅ Your request has been received", error: "❌ Error: ",
         conseil: "Your recommendations", voile: "🤖 The AI gives general advice. It does not recommend any product or brand.",
-        gender_male: "Male", gender_female: "Female", gender_other: "Other"
+        ecosystem: "🌐 Discover the ecosystem", ecosystem_tag: "🔗 Confidential · Free · Accessible to all"
     },
     es: {
         badge: "🔒 100% ANÓNIMO", title: "🧪 Suplementos AI", subtitle: "Consejo personalizado en micronutrición",
@@ -235,7 +389,7 @@ const const translations = {
         label_description: "📝 Descripción", button: "Obtener recomendaciones", footer: "🔒 100% anónimo",
         placeholder: "Describe tus necesidades...", success: "✅ Tu solicitud ha sido recibida", error: "❌ Error: ",
         conseil: "Tus recomendaciones", voile: "🤖 La IA da consejos generales. No recomienda ningún producto o marca.",
-        gender_male: "Hombre", gender_female: "Mujer", gender_other: "Otro"
+        ecosystem: "🌐 Descubre el ecosistema", ecosystem_tag: "🔗 Confidencial · Gratuito · Accesible para todos"
     },
     de: {
         badge: "🔒 100% ANONYM", title: "🧪 Nahrungsergänzungsmittel AI", subtitle: "Personalisierte Mikronährstoffberatung",
@@ -244,7 +398,7 @@ const const translations = {
         label_description: "📝 Beschreibung", button: "Empfehlungen erhalten", footer: "🔒 100% anonym",
         placeholder: "Beschreiben Sie Ihre Bedürfnisse...", success: "✅ Ihre Anfrage wurde empfangen", error: "❌ Fehler: ",
         conseil: "Ihre Empfehlungen", voile: "🤖 Die KI gibt allgemeine Ratschläge. Sie empfiehlt keine bestimmten Produkte oder Marken.",
-        gender_male: "Mann", gender_female: "Frau", gender_other: "Andere"
+        ecosystem: "🌐 Entdecken Sie das Ökosystem", ecosystem_tag: "🔗 Vertraulich · Kostenlos · Für alle zugänglich"
     },
     ar: {
         badge: "🔒 مجهول 100%", title: "🧪 مكملات الذكاء الاصطناعي", subtitle: "استشارة شخصية في التغذية الدقيقة",
@@ -253,7 +407,7 @@ const const translations = {
         label_description: "📝 الوصف", button: "الحصول على توصيات", footer: "🔒 مجهول 100%",
         placeholder: "صف احتياجاتك...", success: "✅ تم استلام طلبك", error: "❌ خطأ: ",
         conseil: "توصياتك", voile: "🤖 يقدم الذكاء الاصطناعي نصائح عامة. لا يوصي بأي منتج أو علامة تجارية.",
-        gender_male: "ذكر", gender_female: "أنثى", gender_other: "أخرى"
+        ecosystem: "🌐 اكتشف النظام البيئي", ecosystem_tag: "🔗 سري · مجاني · في متناول الجميع"
     },
     pt: {
         badge: "🔒 100% ANÔNIMO", title: "🧪 Suplementos AI", subtitle: "Conselho personalizado em micronutrição",
@@ -262,7 +416,7 @@ const const translations = {
         label_description: "📝 Descrição", button: "Obter recomendações", footer: "🔒 100% anônimo",
         placeholder: "Descreva suas necessidades...", success: "✅ Sua solicitação foi recebida", error: "❌ Erro: ",
         conseil: "Suas recomendações", voile: "🤖 A IA dá conselhos gerais. Ela não recomenda nenhum produto ou marca.",
-        gender_male: "Homem", gender_female: "Mulher", gender_other: "Outro"
+        ecosystem: "🌐 Descubra o ecossistema", ecosystem_tag: "🔗 Confidencial · Gratuito · Acessível a todos"
     },
     it: {
         badge: "🔒 100% ANONIMO", title: "🧪 Integratori AI", subtitle: "Consulenza personalizzata in micronutrizione",
@@ -271,7 +425,7 @@ const const translations = {
         label_description: "📝 Descrizione", button: "Ottieni raccomandazioni", footer: "🔒 100% anonimo",
         placeholder: "Descrivi le tue esigenze...", success: "✅ La tua richiesta è stata ricevuta", error: "❌ Errore: ",
         conseil: "Le tue raccomandazioni", voile: "🤖 L'IA fornisce consigli generali. Non raccomanda alcun prodotto o marchio.",
-        gender_male: "Uomo", gender_female: "Donna", gender_other: "Altro"
+        ecosystem: "🌐 Scopri l'ecosistema", ecosystem_tag: "🔗 Riservato · Gratuito · Accessibile a tutti"
     },
     ru: {
         badge: "🔒 100% АНОНИМНО", title: "🧪 Добавки AI", subtitle: "Персонализированная консультация по микронутриентам",
@@ -280,7 +434,7 @@ const const translations = {
         label_description: "📝 Описание", button: "Получить рекомендации", footer: "🔒 100% анонимно",
         placeholder: "Опишите ваши потребности...", success: "✅ Ваш запрос получен", error: "❌ Ошибка: ",
         conseil: "Ваши рекомендации", voile: "🤖 ИИ дает общие советы. Он не рекомендует конкретные продукты или бренды.",
-        gender_male: "Мужчина", gender_female: "Женщина", gender_other: "Другое"
+        ecosystem: "🌐 Откройте для себя экосистему", ecosystem_tag: "🔗 Конфиденциально · Бесплатно · Доступно для всех"
     },
     zh: {
         badge: "🔒 100% 匿名", title: "🧪 补充剂AI", subtitle: "个性化微量营养素咨询",
@@ -289,7 +443,7 @@ const const translations = {
         label_description: "📝 描述", button: "获取建议", footer: "🔒 100% 匿名",
         placeholder: "描述您的需求...", success: "✅ 您的请求已收到", error: "❌ 错误: ",
         conseil: "您的建议", voile: "🤖 AI提供一般建议，不推荐任何特定产品或品牌。",
-        gender_male: "男性", gender_female: "女性", gender_other: "其他"
+        ecosystem: "🌐 发现生态系统", ecosystem_tag: "🔗 保密 · 免费 · 人人可及"
     },
     ja: {
         badge: "🔒 100% 匿名", title: "🧪 サプリメントAI", subtitle: "パーソナライズされた微量栄養素アドバイス",
@@ -298,7 +452,7 @@ const const translations = {
         label_description: "📝 説明", button: "推奨事項を取得", footer: "🔒 100% 匿名",
         placeholder: "あなたのニーズを説明してください...", success: "✅ リクエストを受信しました", error: "❌ エラー: ",
         conseil: "あなたの推奨事項", voile: "🤖 AIは一般的なアドバイスを提供します。特定の製品やブランドを推奨しません。",
-        gender_male: "男性", gender_female: "女性", gender_other: "その他"
+        ecosystem: "🌐 エコシステムを発見", ecosystem_tag: "🔗 機密 · 無料 · すべての人にアクセス可能"
     },
     ko: {
         badge: "🔒 100% 익명", title: "🧪 보충제AI", subtitle: "맞춤형 미량영양소 상담",
@@ -307,7 +461,7 @@ const const translations = {
         label_description: "📝 설명", button: "추천 받기", footer: "🔒 100% 익명",
         placeholder: "당신의 필요를 설명하세요...", success: "✅ 요청이 접수되었습니다", error: "❌ 오류: ",
         conseil: "당신의 추천", voile: "🤖 AI는 일반적인 조언을 제공합니다. 특정 제품이나 브랜드를 추천하지 않습니다.",
-        gender_male: "남성", gender_female: "여성", gender_other: "기타"
+        ecosystem: "🌐 생태계 발견", ecosystem_tag: "🔗 기밀 · 무료 · 모두에게 접근 가능"
     },
     hi: {
         badge: "🔒 100% गुमनाम", title: "🧪 पूरक AI", subtitle: "व्यक्तिगत सूक्ष्म पोषण परामर्श",
@@ -316,10 +470,9 @@ const const translations = {
         label_description: "📝 विवरण", button: "सिफारिशें प्राप्त करें", footer: "🔒 100% गुमनाम",
         placeholder: "अपनी आवश्यकताओं का वर्णन करें...", success: "✅ आपका अनुरोध प्राप्त हो गया है", error: "❌ त्रुटि: ",
         conseil: "आपकी सिफारिशें", voile: "🤖 AI सामान्य सलाह देता है। यह किसी विशिष्ट उत्पाद या ब्रांड की अनुशंसा नहीं करता है।",
-        gender_male: "पुरुष", gender_female: "महिला", gender_other: "अन्य"
+        ecosystem: "🌐 पारिस्थितिकी तंत्र खोजें", ecosystem_tag: "🔗 गोपनीय · मुफ्त · सभी के लिए सुलभ"
     }
 };
- 
 
 function changeLanguage(lang) {
     const t = translations[lang] || translations.fr;
@@ -337,6 +490,8 @@ function changeLanguage(lang) {
     const footer = document.querySelector('.footer');
     const placeholder = document.getElementById('description');
     const voileWarning = document.querySelector('.voile-warning');
+    const ecosystemTitle = document.querySelector('.ecosystem p');
+    const ecosystemTag = document.querySelector('.ecosystem-tag');
 
     if (badge) badge.textContent = t.badge;
     if (title) title.textContent = t.title;
@@ -352,6 +507,8 @@ function changeLanguage(lang) {
     if (footer) footer.textContent = t.footer;
     if (placeholder) placeholder.placeholder = t.placeholder;
     if (voileWarning) voileWarning.innerHTML = t.voile;
+    if (ecosystemTitle) ecosystemTitle.textContent = t.ecosystem;
+    if (ecosystemTag) ecosystemTag.textContent = t.ecosystem_tag;
 }
 
 document.getElementById('languageSelector').addEventListener('change', function() {
@@ -359,6 +516,7 @@ document.getElementById('languageSelector').addEventListener('change', function(
 });
 changeLanguage('fr');
 
+// ===== FORMULAIRE =====
 const form = document.getElementById('supplementsForm');
 const resultDiv = document.getElementById('result');
 const submitBtn = document.getElementById('submitBtn');
@@ -405,35 +563,6 @@ form.onsubmit = async (e) => {
         submitBtn.textContent = t.button || 'Obtenir des recommandations';
     }
 };
-<// ===== TÉMOIGNAGES =====
-const testimonials = [
-    { id: 1, text: "Grâce à Suppléments AI, j'ai découvert la vitamine D et ses bienfaits. Je me sens beaucoup mieux.", author: "Utilisateur anonyme", country: "Canada", date: "2026-06-15" },
-    { id: 2, text: "Je ne savais pas quel complément prendre pour ma fatigue. Les conseils étaient clairs et m'ont orienté vers un médecin.", author: "Utilisateur anonyme", country: "France", date: "2026-06-12" },
-    { id: 3, text: "Un outil simple et fiable. Les recommandations sont générales mais très utiles.", author: "Utilisateur anonyme", country: "Maroc", date: "2026-06-10" },
-    { id: 4, text: "J'ai utilisé Suppléments AI pour ma mère âgée. Les conseils sur les omégas-3 étaient très pertinents.", author: "Utilisateur anonyme", country: "Belgique", date: "2026-06-08" },
-    { id: 5, text: "En tant que sportif, j'ai trouvé des recommandations utiles sur le magnésium. Sans marque, juste des conseils.", author: "Utilisateur anonyme", country: "États-Unis", date: "2026-06-05" }
-];
-
-function displayRandomTestimonial() {
-    const container = document.getElementById('testimonialContainer');
-    if (!container) return;
-    const randomIndex = Math.floor(Math.random() * testimonials.length);
-    const t = testimonials[randomIndex];
-    container.innerHTML = `
-        <div><p>"${t.text}"</p>
-        <div class="author">— ${t.author}</div>
-        <div class="meta">${t.country} · ${new Date(t.date).toLocaleDateString()}</div></div>
-    `;
-}
-
-setInterval(displayRandomTestimonial, 10000);
-displayRandomTestimonial();
->
-<!-- Témoignages -->
-<div class="testimonials-section">
-    <h3>💬 Ce que nos utilisateurs disent</h3>
-    <div id="testimonialContainer" class="testimonial-container">⏳ Chargement...</div>
-    <div class="testimonial-legal">🔒 Témoignages anonymes - Libres de droits</div>
-</div>
+</script>
 </body>
 </html>
